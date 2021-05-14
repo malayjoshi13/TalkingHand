@@ -1,0 +1,14 @@
+name: TalkingHand
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - jupyter
+  - matplotlib-inline=0.1.2=pyhd8ed1ab_2
+  - opencv=4.5.2=py38haa244fe_0
+  - pillow=8.1.2=py38h9273828_1
+  - pip=21.1.1=pyhd8ed1ab_0
+  - pip:
+    - numpy==1.19.5
+    - tensorflow==2.5.0
+prefix: C:\Users\barcode\miniconda3\envs\TalkingHand
