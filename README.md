@@ -7,9 +7,3 @@ Deep learning and Video processing based model which understand the hand gesture
 
 
 
-
-
-
-
-
-opencv, jupyter notebook, pillow, pip tensorflow (includes numpy)
