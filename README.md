@@ -38,7 +38,8 @@ Also install Git Bash from link:- https://git-scm.com/downloads.
 cd /c/Users/thispc/Desktop
 ```
 then,
-```git clone https://github.com/malayjoshi13/TalkingHand.git```
+```
+git clone https://github.com/malayjoshi13/TalkingHand.git```
 ```
 
 **2.1.3)** Now type following code in your command prompt (CMD) to change you current working directory/location to location of "TalkingHand" folder (name of the cloned repository on your local system)
