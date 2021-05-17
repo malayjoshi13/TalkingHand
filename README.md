@@ -38,18 +38,28 @@ Also install Git Bash from link:- https://git-scm.com/downloads.
 cd /c/Users/thispc/Desktop
 ```
 then,
+```git clone https://github.com/malayjoshi13/TalkingHand.git```
 ```
-git clone https://github.com/malayjoshi13/Describe.git
+
+**2.1.3)** Now type following code in your command prompt (CMD) to change you current working directory/location to location of "TalkingHand" folder (name of the cloned repository on your local system)
+
+**Note:** Copy address of "TalkingHand" folder and paste it in format- "cd path_of_location"
+
+```
+cd C:\Users\thispc\Desktop\TalkingHand
+```
+then,
+
+```
+conda env create -f environment.yml
 ```
 
-before doing any step just do following things:
+above command creates virtual environment named "TalkingHand" (as present at top of "environment.yml") and also install packages mentioned in the yml file, then execute,
 
-in git bash type ```cd /c/Users/barcode/Desktop```
-then ```git clone https://github.com/malayjoshi13/TalkingHand.git```
+```
+conda activate TalkingHand
+```
 
-then open your CMD and type: ```cd C:\Users\barcode\Desktop\TalkingHand```
-then type: ```conda env create -f environment.yml```
-then type: ```conda activate TalkingHand```
 
 
 
