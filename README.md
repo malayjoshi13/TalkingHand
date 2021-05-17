@@ -60,7 +60,10 @@ above command creates virtual environment named "TalkingHand" (as present at top
 ```
 conda activate TalkingHand
 ```
-
+then,
+```
+python testing.py
+```
 
 
 
