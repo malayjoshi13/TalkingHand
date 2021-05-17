@@ -12,7 +12,34 @@ TalkingHand uses Computer Vision technology (a branch of Deep Learning technolog
 
 In this way the training process is carried out and the model layers of VGG16 + some additional layers are used together to memorize the mapping between features of images and their corresponding labels. Once done these memorizations are saved as in form of file called as ```weight file``` in ```hdf5``` format.
 
-## 2) Usage:
+These weights are then used in future to classify a new and unseen image of hand gestures of users.
+<br>
+<br>
+
+## 2) Usage
+
+### 2.1) Prediction
+**2.1.1)** Install Miniconda in your system from link:- https://docs.conda.io/en/latest/miniconda.html. (Tip: Keep agreeing and allowing blindly to what all prompts and buttons come in the process of installing miniconda with an exception case where you have to also tick the option to add miniconda to environment variable, i.e.:
+Before
+
+![Inked11aGz_LI](https://user-images.githubusercontent.com/71775151/118516797-46545580-b754-11eb-8364-65e2a6a86992.jpg)
+
+After
+
+![install_python_path](https://user-images.githubusercontent.com/71775151/118516836-4f452700-b754-11eb-998e-6d96f56b9aed.png)
+
+Also install Git Bash from link:- https://git-scm.com/downloads.
+
+**2.1.2)** Open Git Bash and type following code in it to clone this GitHub repository at any location of your wish.
+
+**Note:** Copy address of location where you want to clone this repository and paste it in format- "cd path_of_location"
+```
+cd /c/Users/thispc/Desktop
+```
+then,
+```
+git clone https://github.com/malayjoshi13/Describe.git
+```
 
 before doing any step just do following things:
 
