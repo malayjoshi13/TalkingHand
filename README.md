@@ -20,9 +20,10 @@ These weights are then used in future to classify a new and unseen image of hand
 
 ### 2.1) Prediction
 **2.1.1)** Install Miniconda in your system from link:- https://docs.conda.io/en/latest/miniconda.html. (Tip: Keep agreeing and allowing blindly to what all prompts and buttons come in the process of installing miniconda with an exception case where you have to also tick the option to add miniconda to environment variable, i.e.:
+
 Before
 
-![Inked11aGz_LI](https://user-images.githubusercontent.com/71775151/118516797-46545580-b754-11eb-8364-65e2a6a86992.jpg)
+![Inked11aGz_LI (1)](https://user-images.githubusercontent.com/71775151/118517428-d1cde680-b754-11eb-88ec-edb6388063c3.jpg)
 
 After
 
