@@ -66,7 +66,8 @@ conda activate TalkingHand
 ```
 
 ### 2.2) Prediction
-Once setup is installed and virtual environment is created, execute following command,
+Once setup is installed and virtual environment is created using the command prompt (CMD), execute following command in CMD,
+
 ```
 python testing.py
 ```
@@ -81,7 +82,21 @@ f) converting character(s) into audio
 Although current set of instructions are small in numbers but these can be further extended as per the need of user. The process to do so will be discussed in upcoming sections.
 
 ### 2.3) Data Collection
-Now let us understand how data is collected to train the model to get the ```weight``` which is used above for prediction
+**2.3.1)** Using ```collection.py``` python file, training and validation data corresponding to 7 types of hand gestures namely is collected to train the model to get the ```weight``` which is used above for predicting the hand gestures of user. This collected data is then used to train the model using ```training.ipynb``` file (will see it in upcoming section).
+
+One very ```interesting fact``` is that no matter initially on what training labels you have trained your model via ```training.py``` file, still during the prediction time via ```testing.py``` file you can change the name of labels according to your need.
+
+In simple words, this can be explained like initially while training model using ```training.py``` my training labels were ```0```, ```1```, ```2```, ```3```, ```4```, ```5``` and ```nothing```. But later on while predicting labels for hand gestures, I changed the labels to ```A```, ```B```, ```C```, ```SPACE```, ```DELETE```, ```SPEAK``` and ```NOTHING```.
+
+This was possible because model do not take labels in form of name based labels but take and remember labels with a sequenced indexing. Thus during prediction time we simply changed the mapping between ordered indexing and previous label names to same previous ordered indexing and new label names.
+
+Thus in this way data is collected for getting the weights which we used above.
+
+**2.3.2)** Now let us understand how can we follow the same process and collect data for more such labels.
+a) Execute following command in CMD,
+
+```
+
 
 
 
