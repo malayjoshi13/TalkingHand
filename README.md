@@ -39,7 +39,7 @@ Also install Git Bash from link:- https://git-scm.com/downloads.
 cd /c/Users/thispc/Desktop
 ```
 
-then,
+Then execute,
 
 ```
 git clone https://github.com/malayjoshi13/TalkingHand.git
@@ -53,23 +53,20 @@ git clone https://github.com/malayjoshi13/TalkingHand.git
 cd C:\Users\thispc\Desktop\TalkingHand
 ```
 
-then,
+Then execute,
 
 ```
 conda env create -f environment.yml
 ```
 
-above command creates virtual environment named "TalkingHand" (as present at top of "environment.yml") and also install packages mentioned in the yml file, then execute,
+above command creates virtual environment named "TalkingHand" (as present at top of "environment.yml") and also install packages mentioned in the yml file. After this execute,
 
 ```
 conda activate TalkingHand
 ```
 
-### 2.1) Prediction
-
-
-then,
-
+### 2.2) Prediction
+Once setup is installed and virtual environment is created, execute following command,
 ```
 python testing.py
 ```
@@ -83,8 +80,8 @@ f) converting character(s) into audio
 
 Although current set of instructions are small in numbers but these can be further extended as per the need of user. The process to do so will be discussed in upcoming sections.
 
-### 2.2) Data Collection
-
+### 2.3) Data Collection
+Now let us understand how data is collected to train the model to get the ```weight``` which is used above for prediction
 
 
 
