@@ -17,9 +17,9 @@ In this way the training process is carried out and the model layers of VGG16 + 
 ## 2) Usage
 
 ### 2.1) Setup for using the system
-*2.1.1)* Install Miniconda in your system from link:- https://docs.conda.io/en/latest/miniconda.html. 
+**2.1.1)** Install Miniconda in your system from link:- https://docs.conda.io/en/latest/miniconda.html. 
 
-Tip: Keep agreeing and allowing blindly to what all prompts and buttons come in the process of installing miniconda with an exception case where you have to also tick the option to add miniconda to environment variable, i.e.:
+**Tip:** Keep agreeing and allowing blindly to what all prompts and buttons come in the process of installing miniconda with an exception case where you have to also tick the option to add miniconda to environment variable, i.e.:
 
 Before
 
@@ -31,9 +31,9 @@ After
 
 Also install Git Bash from link:- https://git-scm.com/downloads.
 
-*2.1.2)* Open Git Bash and type following code in it to clone this GitHub repository at any location of your wish.
+**2.1.2)** Open Git Bash and type following code in it to clone this GitHub repository at any location of your wish.
 
-*Note:* Copy address of location where you want to clone this repository and paste it in format- "cd path_of_location"
+**Note:** Copy address of location where you want to clone this repository and paste it in format- "cd path_of_location"
 
 ```
 cd /c/Users/thispc/Desktop
