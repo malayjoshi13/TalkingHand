@@ -71,7 +71,7 @@ Once setup is installed and virtual environment is created using the command pro
 ```
 python testing.py
 ```
-On executing above command, a window will pop up where you can do hand gestures to execute following actions:
+On executing above command, a window will pop up where you can do hand gestures to execute following actions: <br>
 a) printing character "A" <br>
 b) printing character "B" <br>
 c) printing character "C" <br>
