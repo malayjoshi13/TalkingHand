@@ -72,12 +72,12 @@ Once setup is installed and virtual environment is created using the command pro
 python testing.py
 ```
 On executing above command, a window will pop up where you can do hand gestures to execute following actions:
-a) printing character "A"
-b) printing character "B"
-c) printing character "C"
-d) deleting the characters
-e) creating space between two adjacent characters
-f) converting character(s) into audio
+a) printing character "A" <br>
+b) printing character "B" <br>
+c) printing character "C" <br>
+d) deleting the characters <br>
+e) creating space between two adjacent characters <br>
+f) converting character(s) into audio <br>
 
 Although current set of instructions are small in numbers but these can be further extended as per the need of user. The process to do so will be discussed in upcoming sections.
 
