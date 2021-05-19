@@ -6,20 +6,20 @@ Users can further extend this system on their own set of hand gestures which wil
 The objective of this system is to help people with speaking and hearing disability to communicate with other people.
 
 ## 1) What makes TalkingHand work?
-TalkingHand uses Computer Vision technology (a branch of Deep Learning technology) to understand the hand gestures made by user and then classify them to the corresponding labels. To do so this technology uses architecture of a type of Convolutional Neural Network known as VGG16 along with few more layers added over it, so as to understand different features of training images and then to map and memorize those features with the provided labels of those training images.
+TalkingHand uses Computer Vision technology (a branch of Deep Learning technology) to understand the hand gestures made by user and then classify them to the corresponding labels. To do so this technology uses architecture of a type of Convolutional Neural Network known as VGG16 along with few more layers added over it. As a result it will understand different features of training images and then will map and memorize those features with their corresponding training labels.
 
 ![bandicam 2021-05-17 20-22-30-411](https://user-images.githubusercontent.com/71775151/118512165-30449600-b750-11eb-93e5-1a0724a8374c.jpg)
 
-In this way the training process is carried out and the model layers of VGG16 + some additional layers are used together to memorize the mapping between features of images and their corresponding labels. Once done these memorizations are saved as in form of file called as weight file in hdf5 format.
-
-These weights are then used in future to classify a new and unseen scene of hand gestures of user.
+In this way the training process is carried out and the model layers of VGG16 + some additional layers are used together to memorize the mapping between features of images and their corresponding labels. Once done these memorizations are saved as in form of file called as weight file in hdf5 forma and then are used in future to classify a new and unseen scene consisting of hand gesture of user.
 <br>
 <br>
 
 ## 2) Usage
 
 ### 2.1) Prediction
-*2.1.1)* Install Miniconda in your system from link:- https://docs.conda.io/en/latest/miniconda.html. (Tip: Keep agreeing and allowing blindly to what all prompts and buttons come in the process of installing miniconda with an exception case where you have to also tick the option to add miniconda to environment variable, i.e.:
+*2.1.1)* Install Miniconda in your system from link:- https://docs.conda.io/en/latest/miniconda.html. 
+
+Tip: Keep agreeing and allowing blindly to what all prompts and buttons come in the process of installing miniconda with an exception case where you have to also tick the option to add miniconda to environment variable, i.e.:
 
 Before
 
