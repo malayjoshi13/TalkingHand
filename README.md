@@ -16,7 +16,7 @@ In this way the training process is carried out and the model layers of VGG16 + 
 
 ## 2) Usage
 
-### 2.1) Prediction
+### 2.1) Setup for using the system
 *2.1.1)* Install Miniconda in your system from link:- https://docs.conda.io/en/latest/miniconda.html. 
 
 Tip: Keep agreeing and allowing blindly to what all prompts and buttons come in the process of installing miniconda with an exception case where you have to also tick the option to add miniconda to environment variable, i.e.:
@@ -65,14 +65,25 @@ above command creates virtual environment named "TalkingHand" (as present at top
 conda activate TalkingHand
 ```
 
+### 2.1) Prediction
+
+
 then,
 
 ```
 python testing.py
 ```
+On executing above command, a window will pop up where you can do hand gestures to execute following actions:
+a) printing character "A"
+b) printing character "B"
+c) printing character "C"
+d) deleting the characters
+e) creating space between two adjacent characters
+f) converting character(s) into audio
 
+Although current set of instructions are small in numbers but these can be further extended as per the need of user. The process to do so will be discussed in upcoming sections.
 
-
+### 2.2) Data Collection
 
 
 
