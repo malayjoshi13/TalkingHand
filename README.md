@@ -96,8 +96,20 @@ Thus in this way data is collected for getting the weights which we used above.
 
 a) Before proceeding further make sure you have done step (1) of installing setup.
 
-b) Now let us suppose user has to train model to classify hand gestures of alphabets ```W``` and ```A```. In that case user will firstly collect data for label ```W``` by executing command, ```python collecting.py W```. After executing it a window will pop with a rectangularbounding box on right hand side. User is suppose to keep ```his/her hand within that box``` and when ready to collect data ```press key A``` on keyboard. 
+b) Now let us suppose user has to train model to classify hand gestures of alphabets ```W``` and ```A```. In that case user will firstly collect data for label ```W``` by executing command,
 
-Doing this will start capturing images of hand gestures enacted by user in front of webcamera by keeping hand within the bounding box. User will be able to see the number of images captured on the left top side of the screen.
+```python collecting.py W``` 
 
+After executing it a window will pop with a rectangular bounding box on right hand side. User is suppose to keep ```his/her hand within that box``` and ```when ready to collect data``` press ```key A``` on keyboard. 
 
+On doing this one more screen will appear on top of previously present screen. This screen will just show what kind of final images are getting saved on your disk as dataset. User must shift this second screen away from screen 1 to make whole screen 1 visible. 
+
+Also pressing key "A" will start capturing images of hand gestures enacted by user in front of webcamera by keeping hand within the bounding box. During this process user will be able to see the number of images captured till now on the left top side of the first window/screen.
+
+**Note**: While enacting hand gestures user need to constantly keep moving/waving their hand gesture as shown in testing video. The reason behind is that the hand gesture is thresholded from the background by making computer feed that what is moving/waving is hand gesture and what is been static is the background. 
+
+Therefore user is required to ```keep movig/waving the hand gesture``` otherwise the algorithm will ```abruptly pause recording``` assuming that user is not present at that moment. This might give a pause to recording. 
+
+One way to ```pause``` the recording ```in genuine cases``` is to press key A and then to ```resume``` recording press ```key A again```.
+
+The recording ```stops``` either when the ```collecting.py``` script ```records 4000``` images of a particular label or user press ```key Q``` on the keyboard. 
