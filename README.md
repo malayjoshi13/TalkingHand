@@ -122,6 +122,12 @@ to capture more images to replace the deleted garbage images of label W. Repeat 
 
 ***Note***: "Garbage in, garbage out" which means the images you feed model for training decides accuracy of trained model during predicting unknown and new images of similar context.
 
-Once user will gather 4000 images for label W, he/she needs to perform same process with other label(s). Let's assume label Y. So firstly command:- python collecting.py Y, then placing hand in within the bounding box on the right side of popped up window, when ready pressing key A, moving the second popped up screen to a little more of left, keep moving hand while enactinggesture else a pause will occur, press keys to pause if genuinely needed, again key A to resume recording, doing hand gesture till the counter at left side of first screen reaches 4000 or tk quit in between by pressing Q (and again resumng can be done by command:- python collecting.py Y....the recording will start from place where previously left).
+c) Once user will gather 4000 images for label W, he/she needs to perform same process with other label(s). Let's assume label Y. So firstly command:- python collecting.py Y, then placing hand in within the bounding box on the right side of popped up window, when ready pressing key A, moving the second popped up screen to a little more of left, keep moving hand while enactinggesture else a pause will occur, press keys to pause if genuinely needed, again key A to resume recording, doing hand gesture till the counter at left side of first screen reaches 4000 or tk quit in between by pressing Q (and again resumng can be done by command:- python collecting.py Y....the recording will start from place where previously left).
 
 Once images are collected for label Y, go to the folder where the images are saved and there delete images which are not captured in correct manner. Once done re-execute the python file and collect more images, then again deleting and again capturing more images till all the 4000 images are well captured.
+
+d) Once user gathers ```4000 images``` each for all the required labels (like we did for labels Y and W), then he/she has to execute following command in CMD:
+
+```python collecting.py final```
+
+Doing this will split 4000 images of each label into 80:20 ratio for training and validation purposes and will save in predefined manner inside folder named ```dataset_fina``` which we will directly use during training.
