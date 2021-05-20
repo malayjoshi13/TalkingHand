@@ -98,7 +98,9 @@ a) Before proceeding further make sure you have done step (1) of installing setu
 
 b) Now let us suppose user has to train model to classify hand gestures of alphabets ```W``` and ```Y```. In that case user will firstly collect data for label ```W``` by executing command,
 
-```python collecting.py W``` 
+```
+python collecting.py W
+``` 
 
 After executing it a window will pop with a rectangular bounding box on right hand side. User is suppose to keep ```his/her hand within that box``` and ```when ready to collect data``` press ```key A``` on keyboard. 
 
@@ -116,7 +118,9 @@ The recording ```stops``` either when the ```collecting.py``` script ```records 
 
 Once images corresponding to label W are collected, then user must go to the folder where those images are saved and there user must select which images to keep and which one to discard/delete. Once not so good images corresponding to label W are deleted, user is supposed to run again the same above command,
 
-```python collecting.py W```
+```
+python collecting.py W
+```
 
 to capture more images to replace the deleted garbage images of label W. Repeat the process of capturing replacements and deleting the garbage images till user get very well defined 4000 images corresponding to label W.
 
@@ -128,6 +132,8 @@ Once images are collected for label Y, go to the folder where the images are sav
 
 d) Once user gathers ```4000 images``` each for all the required labels (like we did for labels Y and W), then he/she has to execute following command in CMD:
 
-```python collecting.py final```
+```
+python collecting.py final
+```
 
 Doing this will split 4000 images of each label into 80:20 ratio for training and validation purposes and will save in predefined manner inside folder named ```dataset_final``` which we will directly use during training.
