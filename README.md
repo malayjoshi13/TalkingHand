@@ -130,4 +130,4 @@ d) Once user gathers ```4000 images``` each for all the required labels (like we
 
 ```python collecting.py final```
 
-Doing this will split 4000 images of each label into 80:20 ratio for training and validation purposes and will save in predefined manner inside folder named ```dataset_fina``` which we will directly use during training.
+Doing this will split 4000 images of each label into 80:20 ratio for training and validation purposes and will save in predefined manner inside folder named ```dataset_final``` which we will directly use during training.
