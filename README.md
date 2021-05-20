@@ -66,8 +66,7 @@ conda activate TalkingHand
 ```
 <br><br>
 ### 2.2) Prediction
-Once setup is installed and virtual environment is created using the command prompt (CMD), execute following command in CMD,
-
+Once setup is installed from step (2.1) and virtual environment is activated using the command prompt (CMD), execute following command in CMD,
 ```
 python testing.py
 ```
@@ -75,28 +74,30 @@ On executing above command, a window will pop up where you can do hand gestures 
 a) printing character "A" <br>
 b) printing character "B" <br>
 c) printing character "C" <br>
-d) deleting the characters <br>
-e) creating space between two adjacent characters <br>
+d) deleting the character(s) <br>
+e) creating space between two adjacent character(s) <br>
 f) converting character(s) into audio <br>
 
 Although current set of instructions are small in numbers but these can be further extended as per the need of user. The process to do so will be discussed in upcoming sections.
 <br><br>
+
 ### 2.3) Data Collection
-**2.3.1)** Using ```collection.py``` python file, training and validation data corresponding to 7 types of hand gestures namely is collected to train the model to get the ```weight``` which is used above for predicting the hand gestures of user. This collected data is then used to train the model using ```training.ipynb``` file (will see it in upcoming section).
+**2.3.1)** Training and validation data corresponding to 7 types of hand gestures is collected using ```collection.py``` python file to train and evaluate the model to get the ```weight``` which is used above for predicting the hand gestures of user.
 
 One very ```interesting fact``` is that no matter initially on what training labels you have trained your model via ```training.py``` file, still during the prediction time via ```testing.py``` file you can change the name of labels according to your need.
 
 In simple words, this can be explained like initially while training model using ```training.py``` my training labels were ```0```, ```1```, ```2```, ```3```, ```4```, ```5``` and ```nothing```. But later on while predicting labels for hand gestures, I changed the labels to ```A```, ```B```, ```C```, ```SPACE```, ```DELETE```, ```SPEAK``` and ```NOTHING```.
 
-This was possible because model do not take labels in form of name based labels but take and remember labels with a sequenced indexing. Thus during prediction time we simply changed the mapping between ordered indexing and previous label names to same previous ordered indexing and new label names.
+This was made possible because model do not take labels in form of name based labels but take and remember labels with a sequenced indexing. Thus during prediction time we simply changed the mapping between ordered indexing and previous label names to same previous ordered indexing and new label names.
 
 Thus in this way data is collected for getting the weights which we used above.
 
 **2.3.2)** Now let us understand how can we follow the same process and collect data for more such labels.
-a) Execute following command in CMD,
 
-```
+a) Before proceeding further make sure you have done step (1) of installing setup.
 
+b) Now let us suppose user has to train model to classify hand gestures of alphabets ```W``` and ```A```. In that case user will firstly collect data for label ```W``` by executing command, ```python collecting.py W```. After executing it a window will pop with a rectangularbounding box on right hand side. User is suppose to keep ```his/her hand within that box``` and when ready to collect data ```press key A``` on keyboard. 
 
+Doing this will start capturing images of hand gestures enacted by user in front of webcamera by keeping hand within the bounding box. User will be able to see the number of images captured on the left top side of the screen.
 
 
