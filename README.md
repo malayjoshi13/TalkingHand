@@ -113,3 +113,12 @@ Therefore user is required to ```keep movig/waving the hand gesture``` otherwise
 One way to ```pause``` the recording ```in genuine cases``` is to press key A and then to ```resume``` recording press ```key A again```.
 
 The recording ```stops``` either when the ```collecting.py``` script ```records 4000``` images of a particular label or user press ```key Q``` on the keyboard. 
+
+Once images corresponding to label W are collected, then user must go to the folder where those images are saved and there user must select which images to keep and which one to discard/delete. Once not so good images corresponding to label W are deleted, user is supposed to run again the same above command,
+
+```python collecting.py W```
+
+to capture more images to replace the deleted garbage images of label W. Repeat the process of capturing replacements and deleting the garbage images till user get very well defined 4000 images corresponding to label W.
+
+***Note***: "Garbage in, garbage out" which means the images you feed model for training decides accuracy of trained model during predicting unknown and new images of similar context.
+
