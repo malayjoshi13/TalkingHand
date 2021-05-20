@@ -64,7 +64,7 @@ above command creates virtual environment named "TalkingHand" (as present at top
 ```
 conda activate TalkingHand
 ```
-
+<br><br>
 ### 2.2) Prediction
 Once setup is installed and virtual environment is created using the command prompt (CMD), execute following command in CMD,
 
@@ -80,7 +80,7 @@ e) creating space between two adjacent characters <br>
 f) converting character(s) into audio <br>
 
 Although current set of instructions are small in numbers but these can be further extended as per the need of user. The process to do so will be discussed in upcoming sections.
-
+<br><br>
 ### 2.3) Data Collection
 **2.3.1)** Using ```collection.py``` python file, training and validation data corresponding to 7 types of hand gestures namely is collected to train the model to get the ```weight``` which is used above for predicting the hand gestures of user. This collected data is then used to train the model using ```training.ipynb``` file (will see it in upcoming section).
 
