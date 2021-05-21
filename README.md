@@ -80,7 +80,6 @@ f) converting character(s) into audio <br>
 
 Although current set of instructions are small in numbers but these can be further extended as per the need of user. The process to do so will be discussed in upcoming sections.
 <br><br>
-
 ### 2.3) Data Collection
 **2.3.1)** Training and validation data corresponding to 7 types of hand gestures is collected using ```collection.py``` python file to train and evaluate the model to get the ```weight``` which is used above for predicting the hand gestures of user.
 
@@ -141,9 +140,7 @@ Doing this will split 4000 images of each label into 80:20 ratio for training an
 e) This is how one of the collected images corresponding to label "2" looks like:-
 
 ![bandicam 2021-05-21 20-16-10-821](https://user-images.githubusercontent.com/71775151/119156053-79a72500-ba71-11eb-92ce-2bcaf2f97e5a.jpg)
-
 <br><br>
-
 ### 2.4) Training 
 **2.4.1)** If user want to train the model on his/her own custom dataset, then they are required to make a folder in their Google Drive named ```TalkingHand```. Inside that folder place the dataset folder of named ```final_dataset```. Also  download ```training.py``` python file from this GitHub repository and place it inside this folder present in the Google Drive.
 
