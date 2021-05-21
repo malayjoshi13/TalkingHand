@@ -137,7 +137,6 @@ python collecting.py final
 ```
 
 Doing this will split 4000 images of each label into 80:20 ratio for training and validation purposes and will save in predefined manner inside folder named ```dataset_final``` which we will directly use during training.
-
 <br><br>
 
 ### 2.4) Training 
