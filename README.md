@@ -140,6 +140,7 @@ Doing this will split 4000 images of each label into 80:20 ratio for training an
 
 e) This is how one of the collected images corresponding to label "2" looks like:-
 
+![bandicam 2021-05-21 20-16-10-821](https://user-images.githubusercontent.com/71775151/119156053-79a72500-ba71-11eb-92ce-2bcaf2f97e5a.jpg)
 
 <br><br>
 
