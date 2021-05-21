@@ -137,3 +137,10 @@ python collecting.py final
 ```
 
 Doing this will split 4000 images of each label into 80:20 ratio for training and validation purposes and will save in predefined manner inside folder named ```dataset_final``` which we will directly use during training.
+
+<br><br>
+
+### 2.4) Training 
+**2.4.1)** If user want to train the model on his/her own custom dataset, then they are required to make a folder in their Google Drive named ```TalkingHand```. Inside that folder place the dataset folder of named ```final_dataset```. Also  download ```training.py``` python file from this GitHub repository and place it inside this folder present in the Google Drive.
+
+**2.4.2)** Next open ```training.py``` python file from Google Drive folder ```TalkingHand``` and execute each code cell one by one. Finally you will get the weights file in this same folder present in Google Drive.
