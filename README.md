@@ -66,7 +66,7 @@ conda activate TalkingHand
 ```
 <br><br>
 ### 2.2) Prediction
-Once setup is installed from step (2.1) and virtual environment is activated using the command prompt (CMD), execute following command in CMD,
+Once setup is installed from step (2.1) and virtual environment is activated using the command prompt (CMD), then first download weights from link https://drive.google.com/file/d/1-G0fSBWLO_W2w7OLWjPZTAHOsNKRGyLh/view?usp=sharing and place it inside TalkingHand folder inside your local system. After this execute following command in CMD,
 ```
 python testing.py
 ```
