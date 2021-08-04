@@ -143,7 +143,12 @@ e) This is how one of the collected images corresponding to label "2" looks like
 
 ![bandicam 2021-05-21 20-16-10-821](https://user-images.githubusercontent.com/71775151/119156053-79a72500-ba71-11eb-92ce-2bcaf2f97e5a.jpg)
 <br><br>
-### 2.4) Training 
-**2.4.1)** If user want to train the model on his/her own custom dataset, then they are required to make a folder in their Google Drive named ```TalkingHand```. Inside that folder place the dataset folder of named ```final_dataset```. Also  download ```training.ipynb``` python file from link https://drive.google.com/file/d/12QypAGmfiseZZ2r2vLktF-P_FYFAnwJg/view?usp=sharing and place it inside this folder named ```TalkingHand``` present in the Google Drive.
 
-**2.4.2)** Next open the ```training.ipynb``` python file from Google Drive folder ```TalkingHand``` and execute each code cell one by one. Finally you will get the weights file in this same folder present in Google Drive.
+### 2.4) Training on custom dataset
+**a)** Make a folder in your own Google Drive named ```TalkingHand```. Inside that folder place folder named ```final_dataset``` which will contain training and validation dataset.<br> 
+
+**b)** Then download ```training.ipynb``` python file from link https://drive.google.com/file/d/12QypAGmfiseZZ2r2vLktF-P_FYFAnwJg/view?usp=sharing and place it inside ```TalkingHand``` folder present in your Google Drive.<br> 
+
+**c)** Next open this ```training.ipynb``` file via Google Colaboratory application (will see the option at top of file) and execute each code cell.<br>  
+
+**d)** After training, the weights file gets save in ```TalkingHand``` folder (present in Google Drive).<br> 
