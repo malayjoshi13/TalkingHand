@@ -18,55 +18,44 @@ In this way the training process is carried out and the model layers of VGG16 + 
 
 ## 2) Usage
 
-### 2.1) Setup for using the system
-**2.1.1)** Install Miniconda in your system from link:- https://docs.conda.io/en/latest/miniconda.html. 
+### 2.1) Setting up environment to use local system for testing and collecting data
+**a)** Install Miniconda in your system from link:- https://docs.conda.io/en/latest/miniconda.html. 
 
-**Tip:** Keep agreeing and allowing blindly to what all prompts and buttons come in the process of installing miniconda with an exception case where you have to also tick the option to add miniconda to environment variable, i.e.:
+Then, blindly keep agreeing to all prompts which come in the process. But be aware to tick mark both options of "Add Ananacaonda to my PATH environment variable" and "Register Anaconda as my default Python 3.7".
 
-Before
+**b)** After this install Git Bash from link:- https://git-scm.com/downloads. 
 
-![Inked11aGz_LI (1)](https://user-images.githubusercontent.com/71775151/118517428-d1cde680-b754-11eb-88ec-edb6388063c3.jpg)
-
-After
-
-![install_python_path](https://user-images.githubusercontent.com/71775151/118516836-4f452700-b754-11eb-998e-6d96f56b9aed.png)
-
-Also install Git Bash from link:- https://git-scm.com/downloads.
-
-**2.1.2)** Open Git Bash and type following code in it to clone this GitHub repository at any location of your wish.
-
-**Note:** Copy address of location where you want to clone this repository and paste it in format- "cd path_of_location"
+After installing, open Git Bash and execute following code in it to clone my GitHub repository at any location of your wish in your local system. I choosed "c/Users/thispc/Desktop" location.
 
 ```
 cd /c/Users/thispc/Desktop
 ```
 
-Then execute,
+Then execute following code,
 
 ```
 git clone https://github.com/malayjoshi13/TalkingHand.git
 ```
 
-**2.1.3)** Now type following code in your command prompt (CMD) to change you current working directory/location to location of "TalkingHand" folder (name of the cloned repository on your local system)
-
-**Note:** Copy address of "TalkingHand" folder and paste it in format- "cd path_of_location"
+**c)** Now open your command prompt (CMD) and type following code to change you current working directory/location to location of "TalkingHand" folder (name of the cloned repository in your local system)
 
 ```
 cd C:\Users\thispc\Desktop\TalkingHand
 ```
 
-Then execute,
+Then in CMD, execute following code to create virtual environment named "TalkingHand" (as present at top of "environment.yml") and also install packages mentioned in the yml file,
 
 ```
 conda env create -f environment.yml
 ```
 
-above command creates virtual environment named "TalkingHand" (as present at top of "environment.yml") and also install packages mentioned in the yml file. After this execute,
+After this, execute following code in CMD itself,
 
 ```
 conda activate TalkingHand
 ```
 <br><br>
+
 ### 2.2) Prediction
 Once setup is installed from step (2.1) and virtual environment is activated using the command prompt (CMD), then first download weights from link https://drive.google.com/file/d/1-G0fSBWLO_W2w7OLWjPZTAHOsNKRGyLh/view?usp=sharing and place it inside TalkingHand folder inside your local system. After this execute following command in CMD,
 ```
@@ -82,6 +71,7 @@ f) converting character(s) into audio <br>
 
 Although current set of instructions are small in numbers but these can be further extended as per the need of user. The process to do so will be discussed in upcoming sections.
 <br><br>
+
 ### 2.3) Data Collection
 **2.3.1)** Training and validation data corresponding to 7 types of hand gestures is collected using ```collection.py``` python file to train and evaluate the model to get the ```weight``` which is used above for predicting the hand gestures of user.
 
