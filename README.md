@@ -78,65 +78,39 @@ Although current set of instructions are small in numbers but these can be furth
 <br>
 
 ### 2.3) Data Collection
-**2.3.1)** Training and validation data corresponding to 7 types of hand gestures is collected using ```collection.py``` python file to train and evaluate the model to get the ```weight``` which is used above for predicting the hand gestures of user.
+**a)** Training and validation data corresponding to 7 types of hand gestures is collected using ```collection.py```.
 
-One very ```interesting fact``` is that no matter initially on what training labels you have trained your model via ```training.py``` file, still during the prediction time via ```testing.py``` file you can change the name of labels according to your need.
-
-In simple words, this can be explained like initially while training model using ```training.py``` my training labels were ```0```, ```1```, ```2```, ```3```, ```4```, ```5``` and ```nothing```. But later on while predicting labels for hand gestures, I changed the labels to ```A```, ```B```, ```C```, ```SPACE```, ```DELETE```, ```SPEAK``` and ```NOTHING```.
-
-This was made possible because model do not take labels in form of name based labels but take and remember labels with a sequenced indexing. Thus during prediction time we simply changed the mapping between ordered indexing and previous label names to same previous ordered indexing and new label names.
-
-Thus in this way data is collected for getting the weights which we used above.
-
-**2.3.2)** Now let us understand how can we follow the same process and collect data for more such labels.
-
-a) Before proceeding further make sure you have done step (1) of installing setup.
-
-b) Now let us suppose user has to train model to classify hand gestures of alphabets ```W``` and ```Y```. In that case user will firstly collect data for label ```W``` by executing command,
+**b)** A user can use the same script to make his/her own custom dataset by collecting data for label(s) of their choice. For example, data for label ```W``` can be collected by executing following command,
 
 ```
 python collecting.py W
 ``` 
 
-After executing it a window will pop with a rectangular bounding box on right hand side. User is suppose to keep ```his/her hand within that box``` and ```when ready to collect data``` press ```key A``` on keyboard. 
+**c)** After executing the command, a window with a box on its right side will pop-up. There user is suppose to keep ```his/her hand``` and press ```key A, when ready to collect data```. The same ```key A``` is also used to ```pause and resume image capturing process```. 
 
-On doing this one more screen will appear on top of previously present screen. This screen will just show what kind of final images are getting saved on your disk as dataset. User must shift this second screen away from screen 1 to make whole screen 1 visible. 
+On doing this one more screen will appear on top of previously present screen. This screen will just show what kind of final images are getting saved on your disk as dataset. Thus, shift this second screen away from firstly presented screen so that only firstly presented screen would be visible. 
 
-Also pressing key "A" will start capturing images of hand gestures enacted by user in front of webcamera by keeping hand within the bounding box. During this process user will be able to see the number of images captured till now on the left top side of the first window/screen.
+During this whole process, user from the count displayed on the top-left side of the first screen will keep knowing the number of images captured till now.
 
-**Note**: While enacting hand gestures user need to constantly keep moving/waving their hand gesture as shown in testing video. The reason behind is that the hand gesture is thresholded from the background by making computer feed that what is moving/waving is hand gesture and what is been static is the background. 
+**Note**: While enacting hand gestures user need to constantly keep moving/waving their hand gesture as shown in testing video. The reason behind is that the hand gesture is thresholded from the background by making computer feed that what is moving/waving is hand gesture and what is been static is the background. Therefore user is required to ```keep movig/waving the hand gesture``` otherwise the algorithm will ```abruptly pause recording``` assuming that user is not present at that moment.
 
-Therefore user is required to ```keep movig/waving the hand gesture``` otherwise the algorithm will ```abruptly pause recording``` assuming that user is not present at that moment. This might give a pause to recording. 
+**d)** The recording ```stops``` either when the ```collecting.py``` script ```records 4000``` images of a particular label or user presses ```key Q``` on the keyboard. 
 
-One way to ```pause``` the recording ```in genuine cases``` is to press key A and then to ```resume``` recording press ```key A again```.
+**e)** Once images corresponding to label W are collected, then user must go to the folder where those images are saved and there user must select which images to keep and which one to discard/delete. Once not so good images corresponding to label W are deleted, user is supposed to run again the same above command of ```python collecting.py W```, to capture more images to replace the deleted garbage images of label W. 
 
-The recording ```stops``` either when the ```collecting.py``` script ```records 4000``` images of a particular label or user press ```key Q``` on the keyboard. 
+**f)** User needs to repeat this same process of capturing images and deleting the garbage images till user get very well defined 4000 images corresponding to label W.
 
-Once images corresponding to label W are collected, then user must go to the folder where those images are saved and there user must select which images to keep and which one to discard/delete. Once not so good images corresponding to label W are deleted, user is supposed to run again the same above command,
+Example: This is how one of the collected images corresponding to label "2" looks like:-
 
-```
-python collecting.py W
-```
+![bandicam 2021-05-21 20-16-10-821](https://user-images.githubusercontent.com/71775151/119156053-79a72500-ba71-11eb-92ce-2bcaf2f97e5a.jpg)
 
-to capture more images to replace the deleted garbage images of label W. Repeat the process of capturing replacements and deleting the garbage images till user get very well defined 4000 images corresponding to label W.
-
-***Note***: "Garbage in, garbage out" which means the images you feed model for training decides accuracy of trained model during predicting unknown and new images of similar context.
-
-c) Once user will gather 4000 images for label W, he/she needs to perform same process with other label(s). Let's assume label Y. So firstly command:- python collecting.py Y, then placing hand in within the bounding box on the right side of popped up window, when ready pressing key A, moving the second popped up screen to a little more of left, keep moving hand while enactinggesture else a pause will occur, press keys to pause if genuinely needed, again key A to resume recording, doing hand gesture till the counter at left side of first screen reaches 4000 or tk quit in between by pressing Q (and again resumng can be done by command:- python collecting.py Y....the recording will start from place where previously left).
-
-Once images are collected for label Y, go to the folder where the images are saved and there delete images which are not captured in correct manner. Once done re-execute the python file and collect more images, then again deleting and again capturing more images till all the 4000 images are well captured.
-
-d) Once user gathers ```4000 images``` each for all the required labels (like we did for labels Y and W), then he/she has to execute following command in CMD:
+**g)** Once user gathers ```4000 images``` each for all the required labels (like we did for label "W"), then he/she has to execute following command in CMD:
 
 ```
 python collecting.py final
 ```
 
-Doing this will split 4000 images of each label into 80:20 ratio for training and validation purposes and will save in predefined manner inside folder named ```dataset_final``` which we will directly use during training.
-
-e) This is how one of the collected images corresponding to label "2" looks like:-
-
-![bandicam 2021-05-21 20-16-10-821](https://user-images.githubusercontent.com/71775151/119156053-79a72500-ba71-11eb-92ce-2bcaf2f97e5a.jpg)
+to split those 4000 images of each label into 80:20 ratio for training and validation purposes and then to save those images in a  predefined manner inside ```dataset_final``` folder. This folder will going to be used during training process.
 <br>
 <br>
 
