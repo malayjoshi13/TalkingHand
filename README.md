@@ -6,6 +6,8 @@ https://user-images.githubusercontent.com/71775151/120343446-5b191780-c316-11eb-
 Users can further extend this system on their own set of hand gestures which will be discussed in the upcoming sections.
 
 The objective of this system is to help people with speaking and hearing disability to communicate with other people.
+<br>
+<br>
 
 ## 1) What makes TalkingHand work?
 TalkingHand uses Computer Vision technology (a branch of Deep Learning technology) to understand the hand gestures made by user and then classify them to the corresponding labels. To do so, this technology uses architecture of a type of Convolutional Neural Network known as VGG16 along with few more layers added over it. As a result it will understand different features of training images and then will map and memorize those features with their corresponding training labels.
