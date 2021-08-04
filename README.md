@@ -49,15 +49,17 @@ Then in CMD, execute following code to create virtual environment named "Talking
 conda env create -f environment.yml
 ```
 
-After this, execute following code in CMD itself,
+After this, execute following code in CMD itself to activate the virtual environment "TalkingHand",
 
 ```
 conda activate TalkingHand
 ```
-<br><br>
+With this you completed setup part.
+<br>
+<br>
 
 ### 2.2) Prediction
-Once setup is installed from step (2.1) and virtual environment is activated using the command prompt (CMD), then first download weights from link https://drive.google.com/file/d/1-G0fSBWLO_W2w7OLWjPZTAHOsNKRGyLh/view?usp=sharing and place it inside TalkingHand folder inside your local system. After this execute following command in CMD,
+Now download weights from link https://drive.google.com/file/d/1-G0fSBWLO_W2w7OLWjPZTAHOsNKRGyLh/view?usp=sharing and place it inside TalkingHand folder present in your local system. After this execute following command in CMD,
 ```
 python testing.py
 ```
@@ -70,7 +72,8 @@ e) creating space between two adjacent character(s) <br>
 f) converting character(s) into audio <br>
 
 Although current set of instructions are small in numbers but these can be further extended as per the need of user. The process to do so will be discussed in upcoming sections.
-<br><br>
+<br>
+<br>
 
 ### 2.3) Data Collection
 **2.3.1)** Training and validation data corresponding to 7 types of hand gestures is collected using ```collection.py``` python file to train and evaluate the model to get the ```weight``` which is used above for predicting the hand gestures of user.
@@ -132,7 +135,8 @@ Doing this will split 4000 images of each label into 80:20 ratio for training an
 e) This is how one of the collected images corresponding to label "2" looks like:-
 
 ![bandicam 2021-05-21 20-16-10-821](https://user-images.githubusercontent.com/71775151/119156053-79a72500-ba71-11eb-92ce-2bcaf2f97e5a.jpg)
-<br><br>
+<br>
+<br>
 
 ### 2.4) Training on custom dataset
 **a)** Make a folder in your own Google Drive named ```TalkingHand```. Inside this folder place ```final_dataset``` folder which will contain training and validation dataset.<br> 
