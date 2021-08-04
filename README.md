@@ -145,7 +145,7 @@ e) This is how one of the collected images corresponding to label "2" looks like
 <br><br>
 
 ### 2.4) Training on custom dataset
-**a)** Make a folder in your own Google Drive named ```TalkingHand```. Inside that folder place folder named ```final_dataset``` which will contain training and validation dataset.<br> 
+**a)** Make a folder in your own Google Drive named ```TalkingHand```. Inside this folder place ```final_dataset``` folder which will contain training and validation dataset.<br> 
 
 **b)** Then download ```training.ipynb``` python file from link https://drive.google.com/file/d/12QypAGmfiseZZ2r2vLktF-P_FYFAnwJg/view?usp=sharing and place it inside ```TalkingHand``` folder present in your Google Drive.<br> 
 
