@@ -1,5 +1,5 @@
 # TalkingHand
-TalkingHand is a machine learning based conversation system which by help of trained weights of a **convolutional neural network** called as **VGG16 model** classifies and converts the hand gestures made by user into corresponding text based labels of those hand gestures. 
+TalkingHand is a machine learning based **conversation system** which by help of trained weights of a **convolutional neural network** called as **VGG16 model** classifies and converts the hand gestures made by user into corresponding text based labels of those hand gestures. 
 
 https://user-images.githubusercontent.com/71775151/120343446-5b191780-c316-11eb-8b19-4a9a685de2c3.mp4
 
