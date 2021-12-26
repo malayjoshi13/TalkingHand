@@ -1,9 +1,7 @@
 # TalkingHand
-TalkingHand is a machine learning based conversation system which by help of trained weights of a **convolutional neural network* called as *VGG16 model** classifies and converts the hand gestures made by user into corresponding text based labels of those hand gestures. 
+TalkingHand is a machine learning based conversation system which by help of trained weights of a **convolutional neural network** called as **VGG16 model** classifies and converts the hand gestures made by user into corresponding text based labels of those hand gestures. 
 
 https://user-images.githubusercontent.com/71775151/120343446-5b191780-c316-11eb-8b19-4a9a685de2c3.mp4
-
-Users can further extend this system on their own set of hand gestures which will be discussed in the upcoming sections.
 
 The objective of this system is to help people with speaking and hearing disability to communicate with other people.
 <br>
@@ -19,38 +17,15 @@ In this way the training process is carried out and the model layers of VGG16 + 
 ## 2) Usage
 
 ### 2.1) Setting up environment to use local system for testing and collecting data
-**a)** Install Miniconda in your system from link:- https://docs.conda.io/en/latest/miniconda.html. 
+**a)** Install Miniconda and Git Bash in your system. 
 
-Then, blindly keep agreeing to all prompts which come in the process. But be aware to tick mark both options of "Add Ananacaonda to my PATH environment variable" and "Register Anaconda as my default Python 3.7".
+**b)** Use Git Bash to clone this repository in your system.
 
-**b)** After this install Git Bash from link:- https://git-scm.com/downloads. 
-
-After installing, open Git Bash and execute following code in it to clone my GitHub repository at any location of your wish in your local system. I choosed "c/Users/thispc/Desktop" location.
-
-```
-cd /c/Users/thispc/Desktop
-```
-
-Then execute following code,
-
-```
-git clone https://github.com/malayjoshi13/TalkingHand.git
-```
-
-**c)** Now open your command prompt (CMD) and type following code to change you current working directory/location to location of "TalkingHand" folder (name of the cloned repository in your local system)
-
-```
-cd C:\Users\thispc\Desktop\TalkingHand
-```
-
-Then in CMD, execute following code to create virtual environment named "TalkingHand" (as present at top of "environment.yml") and also install packages mentioned in the yml file,
-
+**c)** Then inside cloned repository, create a conda virtual environment and install required libraries using **environment.yml** file by following code in CMD
 ```
 conda env create -f environment.yml
 ```
-
-After this, execute following code in CMD itself to activate the virtual environment "TalkingHand",
-
+Then activate this virtual environment "TalkingHand",
 ```
 conda activate TalkingHand
 ```
