@@ -36,6 +36,9 @@ Now download weights from link https://drive.google.com/file/d/1-G0fSBWLO_W2w7OL
 python testing.py
 ```
 On executing above command, a window will pop up where you can do hand gestures to execute following actions: <br>
+
+![instructions](https://user-images.githubusercontent.com/71775151/147411597-b9ce18f7-ef47-48a4-8e8b-0dc10e626610.jpg)
+
 a) printing character "A" <br>
 b) printing character "B" <br>
 c) printing character "C" <br>
