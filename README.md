@@ -6,14 +6,12 @@ https://user-images.githubusercontent.com/71775151/120343446-5b191780-c316-11eb-
 The objective of this system is to help people with speaking and hearing disability to communicate with other people.
 <br>
 <br>
-
 ## 1) What makes TalkingHand work?
 TalkingHand uses Computer Vision technology (a branch of Deep Learning technology) to understand the hand gestures made by user and then classify them to the corresponding labels. To do so, this technology uses architecture of a type of Convolutional Neural Network known as VGG16 along with few more layers added over it. As a result it will understand different features of training images and then will map and memorize those features with their corresponding training labels.
 
 In this way the training process is carried out and the model layers of VGG16 + some additional layers are used together to memorize the mapping between features of images and their corresponding labels. Once done these memorizations are saved as in form of file called as weight file in hdf5 forma and then are used in future to classify a new and unseen scene consisting of hand gesture of user.
 <br>
 <br>
-
 ## 2) Usage
 
 ### 2.1) Setting up environment to use local system for testing and collecting data
@@ -32,7 +30,6 @@ conda activate TalkingHand
 With this you completed setup part.
 <br>
 <br>
-
 ### 2.2) Prediction
 Now download weights from link https://drive.google.com/file/d/1-G0fSBWLO_W2w7OLWjPZTAHOsNKRGyLh/view?usp=sharing and place it inside "TalkingHand" folder present in your local system. After this execute following command in CMD,
 ```
@@ -47,7 +44,6 @@ e) creating space between two adjacent character(s) <br>
 f) converting character(s) into audio <br>
 <br>
 <br>
-
 ### 2.3) Data Collection
 **a)** Training and validation data corresponding to 7 types of hand gestures is collected using ```collection.py```.
 
@@ -81,7 +77,6 @@ python collecting.py final
 to split those 4000 images of each label into 80:20 ratio for training and validation purposes and then to save those images in a  predefined manner inside ```dataset_final``` folder. This folder will going to be used during training process.
 <br>
 <br>
-
 ### 2.4) Training on custom dataset
 **a)** Make a folder in your own Google Drive named ```TalkingHand```. Inside this folder place ```final_dataset``` folder which will contain training and validation dataset.<br> 
 
