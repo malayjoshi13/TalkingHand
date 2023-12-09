@@ -67,6 +67,6 @@ This command will split those collected 4000 images of each label into 80:20 rat
 
 ### 1.3) Re-training on custom dataset
 
-After collecting the custom dataset locally, run this script in Google Colab, [training.ipynb](https://github.com/malayjoshi13/TalkingHand/blob/main/scripts/training.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github.com/malayjoshi13/TalkingHand/blob/main/scripts/training.ipynb) and follow each instruction in that script. 
+After collecting the custom dataset locally, run this script in Google Colab, [training.ipynb](https://github.com/malayjoshi13/TalkingHand/blob/main/scripts/training.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/malayjoshi13/TalkingHand/blob/main/scripts/training.ipynb) and follow each instruction in that script. 
 
 This script will clone this Github repo, ask you (the user) to upload the custom dataset (located in the local system) and train the underlying model. After training, the weights file gets saved in the ```TalkingHand``` folder (present in Google Drive), and then we can use it locally for inference (exactly like we did in section 1.2).
