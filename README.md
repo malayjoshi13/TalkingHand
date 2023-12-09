@@ -57,10 +57,6 @@ During this whole process, the user can keep knowing the number of images captur
 
 **d)** Once images corresponding to label W are collected, the user must go to the folder where those images are saved, and the user must select which images to keep and which ones to discard/delete. Once not-so-good images corresponding to label W are deleted, the user should re-run the above command of ```python collecting.py W```to capture more images to replace the deleted garbage images of label W. 
 
-Example: This is how one of the collected images corresponding to label "2" looks like:-
-
-![instructions](https://github.com/malayjoshi13/TalkingHand/assets/71775151/5dcf0702-14d8-4e46-b72d-e43e78ddbafe)
-
 **g)** Once the user gathers ```4000 images``` each for all the required labels (like we did for one label of "W"), then he/she has to execute the following command:
 
 ```
