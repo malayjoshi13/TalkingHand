@@ -14,9 +14,11 @@ git clone https://github.com/malayjoshi13/TalkingHand.git
 
 cd TalkingHand
 
-conda env create -f environment.yml
+conda create -n talkinghand_env
 
-conda activate TalkingHand
+conda activate talkinghand_env
+
+pip install -r requirements.txt
 ```
 
 ### 1.2) Inference (Hand Gesture to Text)
