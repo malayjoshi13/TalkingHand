@@ -45,15 +45,9 @@ f) converting character(s) into audio <be>
 python scripts/collecting.py W
 ``` 
 
-**b)** After executing the command, a window with a box on its right side will appear. There user is supposed to keep ```his/her hand``` and press ```key A when ready to collect data``` (the same ```key A``` is also used to ```pause and resume image image-capturing process```). 
+**b)** After executing the command, a window with a box on its right side will appear. First user has to press ```key B``` (ensure Capslock to be OFF) to capture background. During this time user should not plca hand within blue bounding box. After this user is supposed to keep his/her hand and press ```key A``` (ensure Capslock to be OFF) when ready to collect data (the same ```key A``` is also used to ```pause and resume image image-capturing process```). 
 
-On doing this, one more screen will appear showing what kind of final images are getting saved on the user's disk as a dataset. 
-
-During this whole process, the user can keep knowing the number of images captured till now from the count displayed on the top-left side of the first screen.
-
-**Note**: The user needs to constantly keep moving/waving their hand gesture while enacting hand gestures, as shown in the testing video. The reason is that the hand gesture is thresholded from the background by making the computer feel that what is moving/waving is a hand gesture and what has been static is the background. Therefore the user is required to ```keep movig/waving the hand gesture``` otherwise, the algorithm will ```abruptly pause recording``` assuming that the user is not present.
-
-**c)** The recording ```stops``` either when the ```collecting.py``` script ```records 4000``` images of a particular label or user presses ```key Q``` on the keyboard. 
+**c)** The recording ```stops``` either user presses ```key Q``` (ensure Capslock to be OFF) on the keyboard or when the ```collecting.py``` script ```records 4000``` images of a particular label.
 
 **d)** Once images corresponding to label W are collected, the user must go to the folder where those images are saved, and the user must select which images to keep and which ones to discard/delete. Once not-so-good images corresponding to label W are deleted, the user should re-run the above command of ```python collecting.py W```to capture more images to replace the deleted garbage images of label W. 
 

@@ -1,0 +1,7 @@
+opencv-contrib-python
+pillow
+gtts
+numpy
+playsound
+pyttsx3
+tensorflow
