@@ -41,7 +41,7 @@ e) creating space between two adjacent character(s) <br>
 f) converting character(s) into audio <be>
 
 ### 1.3) Collecting custom dataset for re-training
-**a)** Training and validation data corresponding to 7 types of hand gestures is collected using the ```collecting.py``` script. For example, data for label ```W``` can be collected by executing the following command,
+**a)** Training and validation data corresponding to 6 types of hand gestures is collected using the ```collecting.py``` script. For example, data for label ```W``` can be collected by executing the following command,
 
 ```
 python scripts/collecting.py W
