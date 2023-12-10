@@ -13,4 +13,5 @@ dependencies:
     - playsound==1.2.2
     - pyttsx3==2.90
     - tensorflow==2.5.0
+    - fileupload
 prefix: C:\Users\lenovo\miniconda3\envs\TalkingHand
