@@ -1,6 +1,14 @@
 # TalkingHand
 TalkingHand is a Computer Vision and Deep Learning-based **Sign Language to Text conversion system** which with the help of fine-tuned **convolutional neural network** of **VGG16**, classifies and converts the hand gestures made by the user into corresponding text-based labels. Custom dataset of about 4000 images each for 6 labels has been collected for fine-tuning the CNN model using a combination of ```background subtraction (createBackgroundSubtractorMOG2)``` and ```color threshold``` techniques so that data collected will have a lower bias due to the shape & colour of user's hand making the gesture and altering lightning conditions.
 
+<br>
+
+Got the following results after fine-tuning VGG16 on custom dataset:
+train loss: 0.0188, <br>
+train accuracy: 0.9965, <br>
+validation loss: 0.0913, <br> 
+validation accuracy: 0.9888
+
 https://user-images.githubusercontent.com/71775151/120343446-5b191780-c316-11eb-8b19-4a9a685de2c3.mp4
 
 The objective of this system is to help people with speaking and hearing disability to communicate with other people.
