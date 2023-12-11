@@ -1,5 +1,5 @@
 # TalkingHand
-TalkingHand is a Computer Vision and Deep Learning-based **Sign Language to Text conversion system** which with the help of fine-tuned **convolutional neural network** of **VGG16**, classifies and converts the hand gestures made by the user into corresponding text-based labels. Custom dataset of about 4000 images each for 6 labels has been collected for fine-tuning the CNN model using a combination of ```background subtraction (createBackgroundSubtractorMOG2)``` and ```color threshold``` techniques so that data collected will have a lower bias due to the shape & colour of user's hand making the gesture and altering lightning conditions.
+TalkingHand is a Computer Vision and Deep Learning-based **Sign Language to Text conversion system** which with the help of fine-tuned **convolutional neural network** of **VGG16**, classifies and converts the hand gestures made by the user into corresponding text-based labels. Custom dataset of about 4000 images each for 6 labels (i.e. A, B, C, D, SPACE, DELETE) has been collected for fine-tuning the CNN model using a combination of ```background subtraction (createBackgroundSubtractorMOG2)``` and ```color threshold``` techniques so that data collected will have a lower bias due to the shape & colour of user's hand making the gesture and altering lighting conditions.
 
 <br>
 
@@ -39,14 +39,14 @@ python scripts/gesture_to_text.py
 
 On executing the above command, a window will pop up where you can make hand gestures to execute the following actions: <br>
  
-![instructions](https://user-images.githubusercontent.com/71775151/147411597-b9ce18f7-ef47-48a4-8e8b-0dc10e626610.jpg)
+![instructions](https://github.com/malayjoshi13/TalkingHand/assets/71775151/3e1d6d1e-e552-488f-96ca-2672968e122b)
 
 a) printing character "A" <br>
 b) printing character "B" <br>
 c) printing character "C" <br>
-d) deleting the character(s) <br>
+d) printing character "D" <br>
 e) creating space between two adjacent character(s) <br>
-f) converting character(s) into audio <be>
+f) deleting the character(s) <br>
 
 ### 1.3) Collecting custom dataset for re-training
 **a)** Training and validation data corresponding to 6 types of hand gestures is collected using the ```collecting.py``` script. For example, data for label ```W``` can be collected by executing the following command,
