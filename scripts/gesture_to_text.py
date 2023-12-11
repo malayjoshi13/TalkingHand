@@ -4,7 +4,13 @@ import operator
 import cv2
 import os
 from keras.models import load_model
-from utils.bg_subtract import removeBG
+
+def removeBG(frame, bgModel, learningRate):
+    fgmask = bgModel.apply(frame,learningRate=learningRate)
+    kernel = np.ones((3, 3), np.uint8)
+    fgmask = cv2.erode(fgmask, kernel, iterations=1)
+    res = cv2.bitwise_and(frame, frame, mask=fgmask)
+    return res
 
 # First we load our trained model
 model=load_model('weights.hdf5')
@@ -68,10 +74,6 @@ while True:
     resized_roi = cv2.resize(mask, (64, 64)) 
 
     if isBgCaptured == 1:
-        # Close two windows used to capture background when camera started
-        cv2.destroyWindow("Background Capture")
-        cv2.destroyWindow("Mask")
-
         # Right now shape of "mask" is (64, 64). To let it get predicted using trained model we have to make it 
         # of shape (1, 64, 64, 3). For that first we use "merge" function
         channeled_mask = cv2.merge((resized_roi,resized_roi,resized_roi))
