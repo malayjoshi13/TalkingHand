@@ -3,7 +3,7 @@ TalkingHand is a Computer Vision and Deep Learning-based **Sign Language to Text
 
 <br>
 
-Got the following results after fine-tuning VGG16 on custom dataset:
+Got the following results after fine-tuning VGG16 on custom dataset: <br>
 train loss: 0.0188, <br>
 train accuracy: 0.9965, <br>
 validation loss: 0.0913, <br> 
