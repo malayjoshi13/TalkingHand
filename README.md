@@ -37,9 +37,13 @@ Now download weights from [this link](https://drive.google.com/file/d/19tynPMUW8
 python scripts/gesture_to_text.py
 ```
 
-On executing the above command, a window will pop up where you can make hand gestures to execute the following actions: <br>
+**a)** On executing the above command, a window will pop up. 
  
 ![instructions](https://github.com/malayjoshi13/TalkingHand/assets/71775151/3e1d6d1e-e552-488f-96ca-2672968e122b)
+
+**b)** This window is to capture background. So don't keep your hand in bounding box and press ```key B``` to take picture of background. 
+
+**c)** Then another window will pop up, there you can make hand gestures to execute the following actions:
 
 a) printing character "A" <br>
 b) printing character "B" <br>
@@ -55,13 +59,15 @@ f) deleting the character(s) <br>
 python scripts/collecting.py W
 ``` 
 
-**b)** After executing the command, a window with a box on its right side will appear. First user has to press ```key B``` (ensure Capslock to be OFF) to capture background. During this time user should not plca hand within blue bounding box. After this user is supposed to keep his/her hand and press ```key A``` (ensure Capslock to be OFF) when ready to collect data (the same ```key A``` is also used to ```pause and resume image image-capturing process```). 
+**b)** After executing the command, a window with a box on its right side will appear. First user has to press ```key B``` (ensure Capslock to be OFF) to capture background. During this time user should not plca hand within blue bounding box. 
 
-**c)** The recording ```stops``` either user presses ```key Q``` (ensure Capslock to be OFF) on the keyboard or when the ```collecting.py``` script ```records 4000``` images of a particular label.
+**c)** After this user is supposed to keep his/her hand and press ```key A``` (ensure Capslock to be OFF) when ready to collect data (the same ```key A``` is also used to ```pause and resume image image-capturing process```). 
 
-**d)** Once images corresponding to label W are collected, the user must go to the folder where those images are saved, and the user must select which images to keep and which ones to discard/delete. Once not-so-good images corresponding to label W are deleted, the user should re-run the above command of ```python collecting.py W```to capture more images to replace the deleted garbage images of label W. 
+**d)** The recording ```stops``` either user presses ```key Q``` (ensure Capslock to be OFF) on the keyboard or when the ```collecting.py``` script ```records 4000``` images of a particular label.
 
-**g)** Once the user gathers ```4000 images``` each for all the required labels (like we did for one label of "W"), then he/she has to execute the following command:
+*e)** Once images corresponding to label W are collected, the user must go to the folder where those images are saved, and the user must select which images to keep and which ones to discard/delete. Once not-so-good images corresponding to label W are deleted, the user should re-run the above command of ```python collecting.py W```to capture more images to replace the deleted garbage images of label W. 
+
+**f)** Once the user gathers ```4000 images``` each for all the required labels (like we did for one label of "W"), then he/she has to execute the following command:
 
 ```
 python scripts/collecting.py final
