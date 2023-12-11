@@ -61,8 +61,10 @@ python scripts/collecting.py final
 
 This command will split those collected 4000 images of each label into 80:20 ratio for training and validation purposes and then save those images in a  predefined manner inside the ```final_dataset``` folder. This folder will be used during the training process.
 
-### 1.3) Re-training on custom dataset
+### 1.3) Re-training - on your custom dataset, your own hyperparameter values or both
 
 After collecting the custom dataset locally, run this script via Google Colab, [training.ipynb](https://github.com/malayjoshi13/TalkingHand/blob/main/scripts/training.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/malayjoshi13/TalkingHand/blob/main/scripts/training.ipynb) and follow each instruction in this script. 
 
 This script will clone this Github repo, ask you (the user) to put the custom dataset (located in the local system) on GDrive and will then train the underlying model. After training, the weights file gets saved in the ```TalkingHand``` folder (present in Google Drive), and then we can use it locally for inference (exactly like we did in section 1.2).
+
+In case you want to re-train on the dataset custom-created by me, just paste this link on your browser, create a shortcut of this dataset in your GDrive and use it with the above script.
