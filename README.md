@@ -31,7 +31,7 @@ pip install -r requirements.txt
 
 ### 1.2) Inference (Hand Gesture to Text)
 
-Now download weights from (this link)[https://drive.google.com/file/d/1-G0fSBWLO_W2w7OLWjPZTAHOsNKRGyLh/view?usp=sharing] and place it inside the "TalkingHand" folder present in your local system. After this, run the following command:
+Now download weights from [this link](https://drive.google.com/file/d/19tynPMUW8Ee9geskABT6QXKPkfXm9OiI/view?usp=sharing) and place it inside the "TalkingHand" folder present in your local system. After this, run the following command:
 
 ```
 python scripts/gesture_to_text.py
