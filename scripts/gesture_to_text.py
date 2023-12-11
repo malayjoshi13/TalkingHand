@@ -4,21 +4,11 @@ import operator
 import cv2
 import os
 from keras.models import load_model
+from utils.bg_subtract import removeBG
 
 # First we load our trained model
 model=load_model('weights.hdf5')
 
-# Next we use a variable which will be used later to count the numbering of the frame opened via webcamera
-frame_count=0
-
-# After this we use a variable which will be used later to keep number of occurences of each predicted label 
-previous_label_count = 0
-
-# Then we initiate a list which will be used later to store all max frequencied predicted labels
-listt=list()
-
-# Next we initiate a filter that will be used later to seperate out our moving hand from the static background 
-# subtractor = cv2.bgsegm.createBackgroundSubtractorCNT(2,False,20,True)
 # parameters
 threshold = 60  #  BINARY threshold
 blurValue = 41  # GaussianBlur parameter
@@ -30,25 +20,17 @@ bgModel = cv2.createBackgroundSubtractorMOG2(0, bgSubThreshold)
 
 # variables
 isBgCaptured = 0   # bool, whether key "B" is pressed to capture the background
-
-def removeBG(frame):
-    fgmask = bgModel.apply(frame,learningRate=learningRate)
-    # kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3))
-    # res = cv2.morphologyEx(fgmask, cv2.MORPH_OPEN, kernel)
-    kernel = np.ones((3, 3), np.uint8)
-    fgmask = cv2.erode(fgmask, kernel, iterations=1)
-    res = cv2.bitwise_and(frame, frame, mask=fgmask)
-    return res
-
-
-# Now we specify that web-camera will be recording our images
-cap = cv2.VideoCapture(0)
-
+frame_count=0 # count the numbering of the frame opened via webcamera
+previous_label_count = 0 # keep number of occurences of each predicted label
+listt=list() # store all max frequencied predicted labels
 word = ''
 sentence = ''
 start = 0 
 text1=''
 request = " "
+
+# Now we specify that web-camera will be recording our images
+cap = cv2.VideoCapture(0)
 
 # Now we run an infinite loop
 while True:
@@ -75,17 +57,21 @@ while True:
     # This will be used to predict the corresponding label
     roi = smaller_region[15:310, 15:270] 
     
-    roi = removeBG(roi)
+    roi = removeBG(roi, bgModel, learningRate)
     gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
     blur = cv2.GaussianBlur(gray, (blurValue, blurValue), 0)
     _, mask = cv2.threshold(blur, 60, 255, cv2.THRESH_BINARY)
-    # if isBgCaptured==0:
-    cv2.imshow('Mask', mask)
+    if isBgCaptured==0:
+        cv2.imshow('Mask', mask)
 
     # Then we resize this extracted area into the size required by trained model to do prediction
     resized_roi = cv2.resize(mask, (64, 64)) 
 
     if isBgCaptured == 1:
+        # Close two windows used to capture background when camera started
+        cv2.destroyWindow("Background Capture")
+        cv2.destroyWindow("Mask")
+
         # Right now shape of "mask" is (64, 64). To let it get predicted using trained model we have to make it 
         # of shape (1, 64, 64, 3). For that first we use "merge" function
         channeled_mask = cv2.merge((resized_roi,resized_roi,resized_roi))
@@ -99,19 +85,11 @@ while True:
         result = model.predict(reshaped_mask) 
         
         # Then we create a dictonary to map probability position/indexing with label
-        # i.e. we will map first probebility result in list "result" to the label "A"...this means from now onwards probability number placed at 
-        # first position of list "result" which is "result[0][0]" will now correspond to the probability of model predicting label "A"
-
-        # In same we map other variables with other probability indexes
-
-        # Advantage of this dictionary is that we can either continue with index-label mapping as followed during the training process and could be seen 
-        # by "generator.class_indices" like "result[0][0]"--> label "ZERO"  ............or..............  we can change the mapping like we did here
-        # "result[0][0]"--> label "A"
         prediction_dictionary ={'A': result[0][0], 
                     'B': result[0][1], 
                     'C': result[0][2],
-                    'SPACE': result[0][3],
-                    'DELETE': result[0][4],
+                    'SPACE': result[0][4],
+                    'DELETE': result[0][3],
                     'D': result[0][5]
                     }                         
         
@@ -137,22 +115,18 @@ while True:
         prediction = sorted(prediction_dictionary.items(), key=operator.itemgetter(1), reverse=True)  
 
         # Next "prediction[0][0]" will pick up element at first position of variable "prediction"
-        # i.e. it will pick up second parameter of the pair with max probability and placed at first position in variable "prediction"
-        # i.e. based on assumption we are taking right now, a = A
         top_label=prediction[0][0]  
-        # All of these first-first labels (corresponding to max probabilities of every prediction round) gets stored in list called "listt"
         listt.append(top_label)     
         
-        # To avoid any wrong label to rule whole time, what we do is that once "listt" has 20 elements we erase the whole list and starts a new list.
-        # Doing this gives more chance that if at first iteration model has predicted the gesture wrongly then in the new list right label would have 
-        # chance to be famous           
-        # After creating function that will clear the list named "listt" after it get full by 20 elements, next thing is to pick each element of
-        # that list (here elements refers to labels with max probabilities in every iteration) and to count occurence of each element and store
-        # it in variable "current_label_count".        
+        #################################################
+
+        # Till "listt" is not more than 20 items, we need to tell "final_label" aka winning label.
+        # To do this, we first see if its "NOTHING" or not, using non-zero pixels.
+        # If it is not "NOTHING" we pick each element of "listt" (here elements refers to labels with max probabilities in every iteration) 
+        # and count occurence of each element and store it in variable "current_label_count".        
         if len(listt) < 20:  
 
-            # Now using background extracted filtered image we got from above, we calculate number of non-zero/white pixels 
-            # in it and store the calculated data in variable called as "non_zero_pixels". 
+            # Now using background extracted filtered image we got from above, we calculate number of non-zero/white pixels. 
             # If this value is less than "1" then we say that the filtered image has no gesture and thus we classify it as "NOTHING"   
             non_zero_pixels = (cv2.countNonZero(resized_roi)*100)/(4096)
             print(non_zero_pixels)
@@ -165,36 +139,34 @@ while True:
 
             else:
                 # After this, the count in variable "current_label_count" is compared with count stored in "previous_label_count" (which is initially "0") and
-                # if former is greater than latter, i.e. if occurence of label which is currently been picked up is more than the occurenece of label
-                # evaluated before it, then we say the current label is more accurate prediction as has occured more/ predicted more number of times.
-                # Then finally whichever label has occured max time in whole evaluation process is considered most favourable prediction and we store it in
-                # variable "final_label".
+                # if occurence of label which is currently been picked up is more than the occurenece of prev label, then we say the current label is more accurate prediction
+                # as it has occured more/ predicted more number of times. This label is stored as "final_label".
                 for i in listt:
                     current_label_count=listt.count(i)
                     if(current_label_count>previous_label_count):
                         previous_label_count=current_label_count
                         final_label=i 
 
+        # As "listt" has more than 20 elements, to avoid any wrong label dominate whole time, we erase the whole list and starts a new list.
+        # Doing this gives chance that if at first model has predicted the gesture wrongly then in the new list right label would have chance to be famous 
         else:
             listt.clear()
             previous_label_count = 0
-        
+
+        #################################################
         
         # If the favourable predicted labels are either "A", "B" or "C", then we add these words to the existing text called as "sentence" displayed on screen 
         # by doing "sentence = sentence + word"  
 
-        # Here we have used concept of variables "count" and "start". What these variables will do is that they will prevent the same word to get print on screen multiple
+        # Here we have used the variables "previous_label_count" and "start". They will prevent the same word to get print on screen multiple
         # times in a single go. Same (or any another character also) character can only be printed after 3s.
         
-        # How? It will be implemented by making "count" variable as "1" which was earlier "0". Doing this will prevent mutiple printing of same character on screen as the 
+        # How? It will be implemented by making "previous_label_count" variable as "1" which was earlier "0". Doing this will prevent mutiple printing of same character on screen as the 
         # next character could only be added to existing variable "sentence" (and later displayed on screen) only and only when variable "count" is zero (which at present is 1).
 
-        # So to let user print same character again or even any other character also (by making "count" variable as "0"), we initiated clock and stores the time in variable 
-        # "start". Later on when predicted label would be "NOTHING" then this clock will be stopped and time will be measured. If time passed is more than 3s only then 
-        # "count" variable will become "0" and then we could add same character again or even any other character also. 
-        
-        print(final_label)
-        
+        # Later on when predicted label would be "NOTHING" then clock will be stopped and time will be measured. If time passed is more than 3s only then 
+        # "previous_label_count" variable will become "0" and then we could add same character again or even any other character also. 
+                
         if final_label == 'A':
             if previous_label_count == 0:
                 sentence = sentence + 'A' 
@@ -203,7 +175,7 @@ while True:
                 start = time.time()
                 request = "wait before adding next character...."
 
-        # Same logic as used for label "A" but with a twist that here we add character "B" between already present character and nect upcoming character
+        # Same logic as used for label "A" 
         if final_label == 'B':
             if previous_label_count == 0:
                 sentence = sentence + 'B'
@@ -212,7 +184,7 @@ while True:
                 start = time.time() 
                 request = "wait before adding next character...."
                 
-        # Same logic as used for label "A" but with a twist that here we add character "C" between already present character and nect upcoming character
+        # Same logic as used for label "A" 
         if final_label == 'C':
             if previous_label_count == 0:
                 sentence = sentence + 'C'
@@ -220,9 +192,8 @@ while True:
             if previous_label_count == 1:
                 start = time.time() 
                 request = "wait before adding next character...."
-                final_label="wait.."
 
-        # Same logic as used for label "A" but with a twist that here we add character "C" between already present character and nect upcoming character
+        # Same logic as used for label "A" 
         if final_label == 'D':
             if previous_label_count == 0:
                 sentence = sentence + 'D'
@@ -230,10 +201,8 @@ while True:
             if previous_label_count == 1:
                 start = time.time() 
                 request = "wait before adding next character...."
-                final_label="wait.."
 
-        # Same logic of "count" and "start" variables as used for label "A" but with a twist that here we add a "space" between already present character and 
-        # next upcoming character
+        # Same logic as used for label "A" 
         if final_label == 'SPACE':
             if previous_label_count == 0:
                 sentence = sentence + ' '
@@ -242,8 +211,8 @@ while True:
                 start = time.time() 
                 request = "wait before adding next character...."       
                 
-        # Same logic of "count" and "start" variables as used for label "A" but with a twist that here we one-by-one delete each character from existing text "sentence"
-        # been displayed on screen. How? We do this by ignoring the last character of string "sentence" and printing rest whole string. Then in next execution
+        # Same logic as used for label "A" and a twist that here we one-by-one delete each character from existing text "sentence" been displayed on screen. 
+        # How? We do this by ignoring the last character of string "sentence" and printing rest whole string. Then in next execution
         # we again miss the last character of string to print 
         if final_label == 'DELETE':
             if previous_label_count==0: 
@@ -275,10 +244,17 @@ while True:
                     sentence = ''
                     text1 = ''
         
+        #################################################
 
         # Now we will create two screens using "output" and "smaller_region" and merge them to a single cv window called as
         # "output".
         
+        # Then comes second screen which is made up of the frame captured above by web-camera, which we refered as "input". 
+        # On this screen we display "final_label" variable.
+        # Where "final_label" will have name of label which is most popularly predicted most mumber of times 
+        cv2.putText(smaller_region, final_label, (70, 350), cv2.FONT_HERSHEY_PLAIN, 2.5, (0,0,0), 6) #it picks first element from above series, which is actually biggest prob label   
+        
+
         # First screen will be formed using a black screen made from "np.zeroes" and called as "output". 
         # On "output" we put three texts: "request", "sentence" and "text1".
         # Where "request" will display either blank string or "PLEASE START YOUR HAND GESTURES" or 
@@ -290,22 +266,21 @@ while True:
         cv2.putText(output, sentence, (44, 180), cv2.FONT_HERSHEY_PLAIN, 2.5, (0, 255, 255), 4)
         cv2.putText(output, text1, (20, 270), cv2.FONT_HERSHEY_PLAIN, 3.5, (0, 0, 255), 4)
 
-        # Then comes second screen which is made up of the frame captured above by web-camera, which we refered as "input". 
-        # On this screen we display "final_label" variable.
-        # Where "final_label" will have name of label which is most popularly predicted most mumber of times 
-        cv2.putText(smaller_region, final_label, (70, 350), cv2.FONT_HERSHEY_PLAIN, 2.5, (0,0,0), 6) #it picks first element from above series, which is actually biggest prob label   
-        
+ 
         # Then we merge both screens horizontally
         merging_horizontally = np.concatenate((smaller_region, output),axis=1)
         # and display as cv window named "output"
         
         # Then with above merged screens we merge an image horizontally
-        instructions = cv2.imread('static/instructions.jpg')
+        instructions = cv2.imread('./static/instructions.png')
         instructions = cv2.resize(instructions, (1290, 392))
         merging_vertically = np.concatenate((merging_horizontally, instructions),axis=0)
         # And display as cv window
         cv2.imshow("output", merging_vertically)
-        
+       
+        #################################################
+
+
     k = cv2.waitKey(10)
     if k == ord('q'): # quit the console --> key Q on keyboard
         break
@@ -318,4 +293,3 @@ while True:
 
 cap.release()
 cv2.destroyAllWindows()
-
