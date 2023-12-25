@@ -1,7 +1,7 @@
 # TalkingHand
 TalkingHand is a Computer Vision and Deep Learning-based **Sign Language to Text conversion system** which with the help of fine-tuned **convolutional neural network** of **VGG16**, classifies and converts the hand gestures made by the user into corresponding text-based labels. Custom dataset of about 4000 images each for 6 labels (i.e. A, B, C, D, SPACE, DELETE) has been collected for fine-tuning VGG-16 using a combination of ```background subtraction (createBackgroundSubtractorMOG2)``` and ```color threshold``` techniques. These techniques are used so that data collected will have a lower bias due to the shape & colour of the user's hand making the gesture and altering lighting conditions.
 
-The objective of this system is to help people with speaking and hearing disability to communicate with other people.
+The objective of this system is to help people with speaking and hearing disability to communicate with other people. Not choosing any specific sign language convention was intentional as with this experiment I wanted to understand the process to build a general hand sign recognizer which in future could be used for any conventional hand gestures.
 
 https://user-images.githubusercontent.com/71775151/120343446-5b191780-c316-11eb-8b19-4a9a685de2c3.mp4
 
@@ -35,7 +35,7 @@ python scripts/gesture_to_text.py
 
 **a)** On executing the above command, a window will pop up. 
  
-**b)** This window is to capture background. So don't keep your hand in bounding box and press ```key B``` to take picture of background. 
+**b)** This window is to only capture the background. So ensure your hand is not there within the bounding box and then press ```key B``` to take a picture of the background. 
 
 **c)** Then another window will pop up, there you can make hand gestures to execute the following actions:
 
