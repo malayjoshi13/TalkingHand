@@ -7,10 +7,10 @@ https://user-images.githubusercontent.com/71775151/120343446-5b191780-c316-11eb-
 
 Got the following quantitative results after fine-tuning VGG16 on custom dataset: <br>
 
-| | loss | accuracy |
+| | train | validation |
 | --- | --- | --- |
-| train | 0.0188| 0.9965 |
-| validation | 0.0913| 0.9888|
+| loss | 0.0188 | 0.0913 |
+| accuracy | 0.9965 | 0.9888 |
 
 ## Setting up environment on the local system for **"inference"** and **"collecting custom dataset"**:
 
