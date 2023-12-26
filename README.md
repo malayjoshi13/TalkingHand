@@ -82,6 +82,11 @@ This script will clone this Github repo, ask you (the user) to put the custom da
 
 In case you want to re-train on the dataset custom-created by me, just paste this link (https://drive.google.com/drive/folders/1NgiYx9NJ5h8ggXOp6s3VaT6G9wnGugEC?usp=drive_link) on your browser, create a shortcut of this dataset in your GDrive and use it with the above script.
 
+## Evaluating - default trained model or your own trained model
+If evaluating the default trained model, first place custom dataset created by me by pasting this link (https://drive.google.com/drive/folders/1NgiYx9NJ5h8ggXOp6s3VaT6G9wnGugEC?usp=drive_link) on your browser and creating a shortcut of this dataset in your GDrive.
+
+Now evaluate via Google Colab-ready script, [evaluation.ipynb](https://github.com/malayjoshi13/TalkingHand/blob/main/scripts/training.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/malayjoshi13/TalkingHand/blob/main/scripts/training.ipynb)
+
 ## End-note
 Thank you for patiently reading till here. I am pretty sure just like me, you would have also learned something new about object classification task on a real-world use case of building a system for detecting hand gestures and predicting their corresponding labels. Using these learned concepts, I will push myself to continue improving this tool. I encourage you also to do a comparative analysis of other CNN models and train on more diversed dataset to improve this tool!!
 
