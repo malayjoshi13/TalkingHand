@@ -2,10 +2,13 @@
 TalkingHand is a Computer Vision and Deep Learning-based **Sign Language to Text conversion system** which with the help of fine-tuned **convolutional neural network** of **VGG16**, classifies and converts the hand gestures made by the user into corresponding text-based labels. Custom dataset of about 4000 images each for 6 labels (i.e. A, B, C, D, SPACE, DELETE) has been collected for fine-tuning VGG-16 using a combination of ```background subtraction (createBackgroundSubtractorMOG2)``` and ```color threshold``` techniques. These techniques are used so that data collected will have a lower bias due to the shape & colour of the user's hand making the gesture and altering lighting conditions.
 
 Got the following quantitative results after fine-tuning VGG16 on custom dataset: <br>
-| | train | validation |
-| --- | --- | --- |
-| loss | 0.0188 | 0.0913 |
-| accuracy | 0.9965 | 0.9888 |
+| | Train | Validation | Test |
+| --- | --- | --- | --- |
+| Loss | 0.0188 | 0.0913 |
+| Accuracy | 0.9965 | 0.9888 | 0.802 |
+| Precision | - | - | 0.805 |
+| Recall | - | - | 0.801 |
+| F1 Score | - | - | 0.803 |
 
 The objective of this system is to help people with speaking and hearing disability to communicate with other people. Not choosing any specific sign language convention was intentional as with this experiment I wanted to understand the process to build a general hand sign recognizer which in future could be used for any conventional hand gestures.
 
