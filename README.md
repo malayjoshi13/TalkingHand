@@ -5,11 +5,12 @@ The objective of this system is to help people with speaking and hearing disabil
 
 https://user-images.githubusercontent.com/71775151/120343446-5b191780-c316-11eb-8b19-4a9a685de2c3.mp4
 
-Got following quantitative results after fine-tuning VGG16 on custom dataset: <br>
-train loss: 0.0188, <br>
-train accuracy: 0.9965, <br>
-validation loss: 0.0913, <br> 
-validation accuracy: 0.9888
+Got the following quantitative results after fine-tuning VGG16 on custom dataset: <br>
+
+| | loss | accuracy |
+| --- | --- | --- |
+| train | 0.0188| 0.9965 |
+| validation | 0.0913| 0.9888|
 
 ## Setting up environment on the local system for **"inference"** and **"collecting custom dataset"**:
 
@@ -84,3 +85,7 @@ Thank you for patiently reading till here. I am pretty sure just like me, you wo
 
 ## Contributing
 You are welcome to contribute to the repository with your PRs. In case of query or feedback, please write to me at 13.malayjoshi@gmail.com or https://www.linkedin.com/in/malayjoshi13/.
+
+## Licence
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/malayjoshi13/TalkingHand/blob/main/LICENSE)
