@@ -9,7 +9,7 @@ Got the following quantitative results after fine-tuning VGG16 on custom dataset
 
 The objective of this system is to help people with speaking and hearing disability to communicate with other people. Not choosing any specific sign language convention was intentional as with this experiment I wanted to understand the process to build a general hand sign recognizer which in future could be used for any conventional hand gestures.
 
-https://user-images.githubusercontent.com/71775151/120343446-5b191780-c316-11eb-8b19-4a9a685de2c3.mp4
+https://github.com/malayjoshi13/TalkingHand/assets/71775151/e7c0a1b0-2afc-4f08-9015-8f764f3aa56b
 
 ## Setting up environment on the local system for **"inference"** and **"collecting custom dataset"**:
 
