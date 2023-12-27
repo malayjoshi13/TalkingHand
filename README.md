@@ -10,7 +10,7 @@ Got the following quantitative results after fine-tuning VGG16 on custom dataset
 | Recall | - | - | 0.801 |
 | F1 Score | - | - | 0.803 |
 
-The objective of this system is to help people with speaking and hearing disability to communicate with other people. Not choosing any specific sign language convention was intentional as with this experiment I wanted to understand the process to build a general hand sign recognizer which in future could be used for any conventional hand gestures.
+The objective of this system is to help people with speaking and hearing disability to communicate with other people. Not choosing any specific sign language convention for this work was intentional as with this experiment I wanted to understand the process to build a general hand sign recognizer which in future could be used for any conventional hand gestures.
 
 https://github.com/malayjoshi13/TalkingHand/assets/71775151/e7c0a1b0-2afc-4f08-9015-8f764f3aa56b
 
