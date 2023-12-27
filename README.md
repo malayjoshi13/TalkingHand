@@ -76,16 +76,13 @@ This command will split those collected 4000 images of each label into 80:20 rat
 
 ## Re-training - on your custom dataset, your set of hyperparameter values or both
 
-After collecting the custom dataset locally, run this script via Google Colab, [training.ipynb](https://github.com/malayjoshi13/TalkingHand/blob/main/scripts/training.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/malayjoshi13/TalkingHand/blob/main/scripts/training.ipynb) and follow each instruction in this script. 
+After collecting the custom dataset locally, run this script via Google Colab, [training.ipynb](https://github.com/malayjoshi13/TalkingHand/blob/main/scripts/training.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/malayjoshi13/TalkingHand/blob/main/scripts/training.ipynb) for training.
 
-This script will clone this Github repo, ask you (the user) to put the custom dataset (located in the local system) on GDrive and will then train the underlying model. After training, the weights file gets saved in the ```TalkingHand``` folder (present in Google Drive), and then we can use it locally for inference (exactly like we did in section 1.2).
-
-In case you want to re-train on the dataset custom-created by me, just paste this link (https://drive.google.com/drive/folders/1Fbn5kPQUAh-J1l09wmCAsIdMNwcjyVsh?usp=sharing) on your browser, create a shortcut of this dataset in your GDrive and use it with the above script.
+After training, the weights file gets saved in the ```TalkingHand``` folder (present in Google Drive), and then we can use it locally for inference (exactly like we did in section 1.2).
 
 ## Evaluating - default trained model or your own trained model
-If evaluating the default trained model, first place custom dataset created by me by pasting this link (https://drive.google.com/drive/folders/1Fbn5kPQUAh-J1l09wmCAsIdMNwcjyVsh?usp=sharing) on your browser and creating a shortcut of this dataset in your GDrive.
 
-Now evaluate via Google Colab-ready script, [evaluation.ipynb](https://github.com/malayjoshi13/TalkingHand/blob/main/scripts/evaluate.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/malayjoshi13/TalkingHand/blob/main/scripts/evaluate.ipynb)
+Evaluate the trained model via Google Colab-ready script, [evaluation.ipynb](https://github.com/malayjoshi13/TalkingHand/blob/main/scripts/evaluate.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/malayjoshi13/TalkingHand/blob/main/scripts/evaluate.ipynb)
 
 ## End-note
 Thank you for patiently reading till here. I am pretty sure just like me, you would have also learned something new about object classification task on a real-world use case of building a system for detecting hand gestures and predicting their corresponding labels. Using these learned concepts, I will push myself to continue improving this tool. I encourage you also to do a comparative analysis of other CNN models and train on more diversed dataset to improve this tool!!
