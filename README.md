@@ -83,7 +83,7 @@ This script will clone this Github repo, ask you (the user) to put the custom da
 In case you want to re-train on the dataset custom-created by me, just paste this link (https://drive.google.com/drive/folders/1Fbn5kPQUAh-J1l09wmCAsIdMNwcjyVsh?usp=sharing) on your browser, create a shortcut of this dataset in your GDrive and use it with the above script.
 
 ## Evaluating - default trained model or your own trained model
-If evaluating the default trained model, first place custom dataset created by me by pasting this link (https://drive.google.com/drive/folders/1NgiYx9NJ5h8ggXOp6s3VaT6G9wnGugEC?usp=drive_link) on your browser and creating a shortcut of this dataset in your GDrive.
+If evaluating the default trained model, first place custom dataset created by me by pasting this link (https://drive.google.com/drive/folders/1Fbn5kPQUAh-J1l09wmCAsIdMNwcjyVsh?usp=sharing) on your browser and creating a shortcut of this dataset in your GDrive.
 
 Now evaluate via Google Colab-ready script, [evaluation.ipynb](https://github.com/malayjoshi13/TalkingHand/blob/main/scripts/evaluate.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/malayjoshi13/TalkingHand/blob/main/scripts/evaluate.ipynb)
 
