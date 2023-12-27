@@ -80,7 +80,7 @@ After collecting the custom dataset locally, run this script via Google Colab, [
 
 This script will clone this Github repo, ask you (the user) to put the custom dataset (located in the local system) on GDrive and will then train the underlying model. After training, the weights file gets saved in the ```TalkingHand``` folder (present in Google Drive), and then we can use it locally for inference (exactly like we did in section 1.2).
 
-In case you want to re-train on the dataset custom-created by me, just paste this link (https://drive.google.com/drive/folders/1NgiYx9NJ5h8ggXOp6s3VaT6G9wnGugEC?usp=drive_link) on your browser, create a shortcut of this dataset in your GDrive and use it with the above script.
+In case you want to re-train on the dataset custom-created by me, just paste this link (https://drive.google.com/drive/folders/1Fbn5kPQUAh-J1l09wmCAsIdMNwcjyVsh?usp=sharing) on your browser, create a shortcut of this dataset in your GDrive and use it with the above script.
 
 ## Evaluating - default trained model or your own trained model
 If evaluating the default trained model, first place custom dataset created by me by pasting this link (https://drive.google.com/drive/folders/1NgiYx9NJ5h8ggXOp6s3VaT6G9wnGugEC?usp=drive_link) on your browser and creating a shortcut of this dataset in your GDrive.
